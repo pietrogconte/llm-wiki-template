@@ -4,4 +4,4 @@ Append-only chronological log of every operation on the wiki (ingest, query, lin
 
 ## [YYYY-MM-DD] setup | Wiki created
 
-Initial structure created from the `llm-wiki-mempalace` template. Replace this entry with your actual creation date and any setup notes (domain chosen, MemPalace enabled or not, etc.).
+Initial structure created from the `llm-wiki-template` template. Replace this entry with your actual creation date and any setup notes (domain chosen, MemPalace enabled or not, etc.).

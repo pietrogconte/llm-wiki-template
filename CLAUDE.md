@@ -91,11 +91,11 @@ Log to `wiki/log.md`:
 
 This template can pair with [MemPalace](https://github.com/MemPalace/mempalace) — a separate, third-party memory tool — for **cross-session recall** (so a long-running or restarted agent session doesn't lose context). It is intentionally decoupled from the wiki:
 
-- MemPalace auto-saves conversation transcripts via Claude Code hooks (global, machine-level — see `scripts/setup_mempalace.py`).
+- MemPalace auto-saves conversation transcripts via Claude Code hooks (global, machine-level — see [mempalace-setup](https://github.com/pietrogconte/mempalace-setup)).
 - The wiki's Ingest/Query/Lint operations above are unaffected either way — MemPalace is a recall aid, not a replacement for the curated synthesis in `wiki/`.
-- If installed, use `mempalace search "<query>"` when you need to recall something from a past session that isn't in this wiki yet. Don't use it as a substitute for `wiki/index.md` when answering questions about content *already* in the wiki.
+- If installed, use `mempalace search "<query>"` (or `<tool venv python> -m mempalace search "<query>"` if the launcher is blocked, e.g. by Windows Smart App Control) when you need to recall something from a past session that isn't in this wiki yet. Don't use it as a substitute for `wiki/index.md` when answering questions about content *already* in the wiki.
 
-If you didn't run the setup script, ignore this section entirely — the wiki works standalone.
+If you didn't set up MemPalace, ignore this section entirely — the wiki works standalone.
 
 ## Git
 
