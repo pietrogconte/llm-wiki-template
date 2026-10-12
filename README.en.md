@@ -51,23 +51,38 @@ The wiki works standalone — MemPalace is an additional layer, deliberately **d
 | | `wiki/` (this repo) | MemPalace |
 |---|---|---|
 | What it holds | **Curated** synthesis — only what the agent decided was worth turning into a page | **Verbatim** history of everything — every conversation, unfiltered |
-| Where it lives | Inside this repository, versioned in git | Outside any repo, in a single per-machine "palace" (`~/.config/mempalace`), **shared across all your projects** — not one palace per wiki |
+| Where it lives | Inside this repository, versioned in git | Outside any repo, in a single per-machine "palace" (`~/.config/mempalace/palace`), **shared across all your projects** — not one palace per wiki |
 | Do you read it directly? | Yes — it's markdown, opens in Obsidian, it's the actual deliverable | No — it's a search (`mempalace search`), not a place you browse |
 | When the agent uses it | Always, to answer anything **already** documented in the wiki (`wiki/index.md`) | Only when context is missing that never made it into a page yet — e.g. "what did we discuss about X last week?" |
 
 In practice: the wiki is the "finished version" you cultivate; MemPalace is a safety net that keeps you from losing what hasn't been promoted to a page yet. A source can go straight into the wiki (the Ingest flow) without ever touching MemPalace, and a conversation can stay in MemPalace forever if nothing in it was worth turning into a page.
 
-**Heads up if you instantiate this template more than once:** every repo on the same machine that runs `setup_mempalace.py` lands in the *same* palace (`~/.config/mempalace`) — it's not an isolated database per wiki. If you spin up a second wiki from this template (a different domain, a different project) and run the setup there too, both will share the same memory, and a search from one can surface content from the other. If you need real isolation between wikis, point `palace_path` at a different location for each one (see MemPalace's `config.json`), or use separate machines/profiles.
+**Heads up if you instantiate this template more than once:** every repo on the same machine that runs `setup_mempalace.py` lands in the *same* palace (`~/.config/mempalace/palace`) — it's not an isolated database per wiki. If you spin up a second wiki from this template (a different domain, a different project) and run the setup there too, both will share the same memory, and a search from one can surface content from the other. If you need real isolation between wikis, point `palace_path` at a different location for each one (see MemPalace's `config.json`), or use separate machines/profiles.
+
+### Where the palace lives (and how to check)
+
+- **Palace (the data):** `~/.config/mempalace/palace` — on Windows, `%USERPROFILE%\.config\mempalace\palace`. The path comes from `palace_path` in `~/.config/mempalace/config.json`.
+- **`~/.mempalace`:** only hook state and locks (`hook_state/`, `locks/`). It is not a second palace.
+
+To check (use the tool's venv python — see the Windows section below):
+```
+<python> -m mempalace status    # drawer counts per wing/room
+<python> -c "from mempalace.config import MempalaceConfig; print(MempalaceConfig().palace_path)"
+```
+`setup_mempalace.py` also prints the real path at the end.
+
+### Setup
 
 ```
-python scripts/setup_mempalace.py --dry-run   # preview changes
+python scripts/setup_mempalace.py --dry-run   # preview changes (prints a diff, writes nothing)
 python scripts/setup_mempalace.py             # apply
 ```
 
 The script:
-- Installs the `mempalace` CLI if not already available (`uv` → `pipx` → `pip`, whichever exists).
-- Configures global Claude Code hooks (`Stop`/`SessionEnd`/`PreCompact`) using the native `mempalace hook run` command — no `.sh` scripts involved, so it works the same on Windows/Linux/macOS.
-- Appends a minimal recall note to your global `~/.claude/CLAUDE.md` (idempotent).
+- Looks for a `mempalace` command that **actually runs**, by executing `--version`: first `<tool venv python> -m mempalace`, then the `mempalace` launcher on PATH. It only installs (`uv` → `pipx` → `pip`) if none works.
+- Configures global Claude Code hooks (`Stop`/`SessionEnd`/`PreCompact`, timeout 30) with the command that worked + `hook run` — no `.sh` scripts involved, so it works the same on Windows/Linux/macOS. Existing MemPalace hooks are updated, not duplicated. Backs up `settings.json` first.
+- Ensures a minimal recall note in your global `~/.claude/CLAUDE.md`. If a MemPalace note already exists without the marker (hand-written, any language), it gets wrapped with the marker instead of duplicated.
+- Prints where the palace lives.
 
 What it deliberately does **not** do automatically (your call, whenever you want it):
 ```
@@ -76,6 +91,16 @@ mempalace mine <project-dir>                        # mine a project's source/do
 ```
 
 It also doesn't register the `mempalace rules` block (the full multi-agent coordination protocol, MCP with 45 tools) — that's a much bigger scope than "memory across sessions," and would add coupling this template intentionally avoids. If you want that, it's a separate decision (`mempalace rules --help`).
+
+### Windows: Smart App Control / Application Control
+
+The `.exe` launchers `uv`/`pipx` create (e.g. `~/.local/bin/mempalace.exe`) are unsigned, and Smart App Control (or another Application Control policy) may block them — sometimes intermittently. The tool venv's `python.exe` is signed, so the reliable route is to call the module:
+
+```
+C:/Users/<you>/AppData/Roaming/uv/tools/mempalace/Scripts/python.exe -m mempalace status
+```
+
+The script already prefers this form and writes it into the hooks with `/` separators (hooks run in Git Bash). Use the same prefix in place of `mempalace` in the commands in this README. Blocks show up in Event Viewer under *Microsoft-Windows-CodeIntegrity/Operational*.
 
 ## Credits
 
