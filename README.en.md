@@ -63,7 +63,7 @@ Obsidian makes a good reader for the wiki: the agent writes, you read and naviga
 
 The `obsidian-preset/` folder is a starting point. It is **optional**: you don't need it to use the wiki.
 
-- `app.json`: `[[wikilinks]]` link format, attachments in `raw/assets`, auto-update links on rename.
+- `app.json`: `[[wikilinks]]` link format, attachments in `raw/assets`, auto-update links on rename, and the inline title turned off (pages already have their own H1, so it would duplicate the title).
 - `graph.json`: the graph hides `index`, `log`, `CLAUDE`, `AGENTS` and the repo docs, and colors nodes by folder (projects, concepts, entities, sources and the `raw/` notes).
 
 Copy it into `.obsidian/` **before opening the vault** (or with Obsidian closed, since it overwrites existing settings):

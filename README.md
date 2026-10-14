@@ -63,7 +63,7 @@ O Obsidian é um bom leitor para a wiki: o agente escreve, você lê e navega.
 
 A pasta `obsidian-preset/` traz um ponto de partida. É **opcional**: não precisa dele para usar a wiki.
 
-- `app.json`: links no formato `[[wikilinks]]`, anexos em `raw/assets`, atualizar links automaticamente ao renomear.
+- `app.json`: links no formato `[[wikilinks]]`, anexos em `raw/assets`, atualizar links automaticamente ao renomear e título embutido desligado (as páginas já têm H1 próprio; ele duplicaria o título).
 - `graph.json`: o grafo esconde `index`, `log`, `CLAUDE`, `AGENTS` e os documentos do repo, e colore os nós por pasta (projects, concepts, entities, sources e as notas de `raw/`).
 
 Copie para `.obsidian/` **antes de abrir o cofre** (ou com o Obsidian fechado, porque sobrescreve as configurações existentes):
