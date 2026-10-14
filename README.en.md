@@ -2,7 +2,7 @@
 
 [Português](README.md) | **English**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/pietrogconte/llm-wiki-template/blob/main/LICENSE)
 
 A ready-to-use template for instantiating an **LLM Wiki**: a persistent, interlinked markdown knowledge base maintained by an LLM agent (Claude Code, Codex, etc.), instead of a RAG that rederives everything on every query. Includes a generic schema (`CLAUDE.md`/`AGENTS.md`) and the folder structure, ready to go.
 
@@ -71,4 +71,4 @@ The wiki works standalone. If you want the agent not to lose context across long
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see the `LICENSE` file at the repository root.
