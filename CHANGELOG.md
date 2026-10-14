@@ -10,10 +10,10 @@ First "ready to use" release.
 - `scripts/lint_wiki.py`: mechanical wiki linter (Python 3.9+, stdlib only, read-only). Errors: broken wikilinks, empty files, pages missing from the index, missing/incomplete frontmatter, relative links to extensionless files, wikilink examples outside backticks in docs. Warning: raw sources with no ingest. Non-zero exit on errors; `--strict` also fails on warnings.
 - `.githooks/pre-commit`: optional hook (`git config core.hooksPath .githooks`). Plain `sh`; tries `py -3`, `python3`, `python` and skips with a warning if no working Python is found.
 - GitHub Actions workflow running the linter on push and pull request (Python 3.9 and 3.12).
-- `obsidian-preset/`: optional `app.json` (wikilinks, attachments in `raw/assets`, auto-update links) and `graph.json` (hides index/log/schema/docs, colors nodes by wiki folder).
+- `obsidian-preset/`: optional `app.json` (wikilinks, attachments in `raw/assets`, auto-update links) and `graph.json` (hides index/log/schema/docs, colors nodes by wiki folder and `raw/`).
 - Optional provenance legend in the schema (✅ / 💡 / 🔎).
 - `ARCHITECTURE.md` / `ARCHITECTURE.en.md`: layers, operations, schema conventions, wiki vs. RAG.
-- `example` (Portuguese) and `example-en` (English) branches with a complete fictional wiki that passes the linter.
+- `example` (Portuguese) and `example-en` (English) branches with a complete fictional home-baking wiki (4 projects, 6 hub concepts, 4 entities, 10 sources) that passes the linter.
 - README screenshots in `docs/img/`.
 - `.gitattributes` normalizing line endings to LF.
 

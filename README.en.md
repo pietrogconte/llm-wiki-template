@@ -64,7 +64,7 @@ Obsidian makes a good reader for the wiki: the agent writes, you read and naviga
 The `obsidian-preset/` folder is a starting point. It is **optional**: you don't need it to use the wiki.
 
 - `app.json`: `[[wikilinks]]` link format, attachments in `raw/assets`, auto-update links on rename.
-- `graph.json`: the graph hides `index`, `log`, `CLAUDE`, `AGENTS` and the repo docs, and colors nodes by folder (projects, concepts, entities, sources).
+- `graph.json`: the graph hides `index`, `log`, `CLAUDE`, `AGENTS` and the repo docs, and colors nodes by folder (projects, concepts, entities, sources and the `raw/` notes).
 
 Copy it into `.obsidian/` **before opening the vault** (or with Obsidian closed, since it overwrites existing settings):
 
@@ -119,7 +119,7 @@ The hook is an `sh` script run by Git itself: no `.bat` or `.ps1`, which Windows
 
 ## Example wiki
 
-`main` ships empty, ready for your own wiki. To see a complete wiki that follows the schema — a project, two concepts, an entity, sources, index, log and the provenance legend — check out the example branches. The content is fictional and passes the linter:
+`main` ships empty, ready for your own wiki. To see a complete wiki that follows the schema — 4 projects, 6 hub concepts, 4 entities, 10 sources, index, log and the provenance legend — check out the example branches. The content is fictional and passes the linter:
 
 | Branch | Language |
 |---|---|

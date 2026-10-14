@@ -64,7 +64,7 @@ O Obsidian é um bom leitor para a wiki: o agente escreve, você lê e navega.
 A pasta `obsidian-preset/` traz um ponto de partida. É **opcional**: não precisa dele para usar a wiki.
 
 - `app.json`: links no formato `[[wikilinks]]`, anexos em `raw/assets`, atualizar links automaticamente ao renomear.
-- `graph.json`: o grafo esconde `index`, `log`, `CLAUDE`, `AGENTS` e os documentos do repo, e colore os nós por pasta (projects, concepts, entities, sources).
+- `graph.json`: o grafo esconde `index`, `log`, `CLAUDE`, `AGENTS` e os documentos do repo, e colore os nós por pasta (projects, concepts, entities, sources e as notas de `raw/`).
 
 Copie para `.obsidian/` **antes de abrir o cofre** (ou com o Obsidian fechado, porque sobrescreve as configurações existentes):
 
@@ -119,7 +119,7 @@ O hook é um script `sh` que o próprio Git executa: nada de `.bat` ou `.ps1`, q
 
 ## Wiki de exemplo
 
-A `main` vem vazia, pronta para a sua wiki. Para ver uma wiki completa seguindo o schema, com um projeto, dois conceitos, uma entidade, fontes, index, log e a legenda de proveniência, use as branches de exemplo. O conteúdo é fictício e passa no lint:
+A `main` vem vazia, pronta para a sua wiki. Para ver uma wiki completa seguindo o schema, com 4 projetos, 6 conceitos que funcionam como hubs, 4 entidades, 10 fontes, index, log e a legenda de proveniência, use as branches de exemplo. O conteúdo é fictício e passa no lint:
 
 | Branch | Idioma |
 |---|---|
