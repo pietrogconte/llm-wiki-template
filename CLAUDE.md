@@ -4,7 +4,7 @@ This is an **LLM Wiki**: a persistent, interlinked markdown knowledge base that 
 
 > **Customize this file first.** Replace the `<domain>` placeholder below with what this wiki is actually about (personal knowledge, a research topic, a book companion, a team wiki, etc.), and rewrite the sections that don't fit your use case. This file is the schema — it should evolve with real usage, not stay generic.
 
-**Domain**: `<domain>` — describe in 1-2 sentences what this wiki tracks and why.
+**Domain**: home baking (bread, pizza, focaccia, panettone) — a **fictional example** wiki for the `example` branch of `llm-wiki-template`.
 
 ## Layers
 
@@ -116,7 +116,7 @@ State your own git policy here — for example: *"Never run git commands automat
 
 ## Style
 
-- State the content language here once you pick one (this schema ships in English by default).
+- Content language: Portuguese (pt-BR). This schema stays in English.
 - Be factual; cite the source page for non-trivial claims.
 - Prefer lists and tables when they help compare information.
 - No filler: pages should be dense with information, not prose padding.
