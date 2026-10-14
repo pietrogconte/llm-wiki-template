@@ -84,6 +84,8 @@ When asked, check for:
 - Missing cross-references
 - Gaps that could be filled with a web search
 
+The mechanical checks (broken links, empty files, pages missing from the index, incomplete frontmatter, wikilink examples outside backticks in docs, raw sources with no ingest) are automated in `scripts/lint_wiki.py` — run `python scripts/lint_wiki.py` first, then do the semantic checks above.
+
 Log to `wiki/log.md`:
 `## [YYYY-MM-DD] lint | Summary of what was found/fixed`
 

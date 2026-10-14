@@ -1,0 +1,18 @@
+#!/bin/sh
+# Optional pre-commit hook: runs the wiki linter before each commit.
+# Enable:  git config core.hooksPath .githooks
+# Disable: git config --unset core.hooksPath
+#
+# Plain sh (run by Git itself), no .bat/.ps1. Tries "py -3", "python3" and
+# "python" in that order, skipping any that is not a working interpreter
+# (e.g. the Microsoft Store alias on Windows). If none works, it warns and
+# lets the commit through instead of blocking it.
+
+for candidate in "py -3" "python3" "python"; do
+    if $candidate -c "import sys" >/dev/null 2>&1; then
+        exec $candidate scripts/lint_wiki.py
+    fi
+done
+
+echo "pre-commit: no working Python found (tried py -3, python3, python); skipping wiki lint." >&2
+exit 0
