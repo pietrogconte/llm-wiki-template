@@ -45,7 +45,7 @@ Obsidian makes a good reader for the wiki: the agent writes, you read and naviga
 
 1. **Install (Windows):** `winget install --id Obsidian.Obsidian -e --source winget`. The installer is digitally signed (Dynalist Inc), so Smart App Control doesn't block it.
 2. **Open the repo root as the vault** (*Open folder as vault*), not just `wiki/`. Pages link into `raw/` (sources and attachments in `raw/assets/`), and `CLAUDE.md` stays at hand. `.obsidian/` is already in `.gitignore`.
-3. **Settings** (*Settings → Files and links*): **Use [[Wikilinks]]** on; attachments in `raw/assets`; **Automatically update internal links** on. Renaming a page counts as a manual edit (see item 6).
+3. **Settings** (*Settings → Files and links*): **Use `[[Wikilinks]]`** on; attachments in `raw/assets`; **Automatically update internal links** on. Renaming a page counts as a manual edit (see item 6).
 4. **Navigation:** start at `wiki/index.md` (the catalog); `wiki/log.md` has the history. Use the Quick Switcher (`Ctrl+O`), search (`Ctrl+Shift+F`), the **backlinks** pane, **Graph View** (`Ctrl+G`) and the local graph (`Ctrl+P` → "Open local graph"). Frontmatter shows up as *Properties*; click a tag to list the pages that have it. Careful: clicking a link to a page that doesn't exist creates an empty file.
 5. **How to read it:** `projects/` holds one project or research thread per page; `concepts/` and `entities/` hold what appears in 2+ projects; `sources/` has one summary per source; `raw/` keeps the original, immutable sources. If your schema marks provenance, for example ✅ decided by you, 💡 suggested by the agent and 🔎 verified, put the legend at the top of the pages.
 6. **Workflow:** the agent writes the wiki (Ingest, Query and Lint, per `CLAUDE.md`). If you edit something by hand, commit it from the terminal and tell the agent next session. Never edit `raw/`.
@@ -58,7 +58,7 @@ Obsidian makes a good reader for the wiki: the agent writes, you read and naviga
    git push
    ```
    Community plugins (including *Obsidian Git*) are third-party code with access to the whole vault. Keep **Restricted mode** on and only install something after reviewing it.
-8. **Asking the wiki:** ask the agent for a **Query**, naming the relevant pages (e.g. "Run a Query about X, considering [[Page A]] and [[Page B]]"). It answers with citations, logs the query in `log.md`, and offers to turn answers of lasting value into a new page.
+8. **Asking the wiki:** ask the agent for a **Query**, naming the relevant pages (e.g. "Run a Query about X, considering `[[Page A]]` and `[[Page B]]`"). It answers with citations, logs the query in `log.md`, and offers to turn answers of lasting value into a new page.
 
 ## Optional: cross-session memory
 
