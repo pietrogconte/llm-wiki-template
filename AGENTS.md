@@ -50,6 +50,17 @@ sources: []
 - Filename = page title.
 - Images referenced via `raw/assets/`.
 
+## Provenance (optional)
+
+Useful when the wiki records decisions made in conversations with an agent. Mark claims on project pages with a legend and put it at the top of the page:
+
+> **Legend:** ✅ decided/done by the user · 💡 suggested by the agent (not confirmed) · 🔎 verified in the local environment (with date).
+
+- An agent suggestion the user did not confirm is never a "decision" — keep it under 💡 / open options.
+- When the user states where an item came from, that statement prevails.
+
+Delete this section if you don't need it.
+
 ## Operations
 
 ### Ingest
