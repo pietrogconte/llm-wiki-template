@@ -38,14 +38,18 @@ YAML frontmatter on every new page:
 
 ```yaml
 ---
-title:
-tags: []
+title: Page Name
+tags:
+  - some-tag
+  - another-tag
 date: YYYY-MM-DD
 status: active | stale | archived
-sources: []
+sources:
+  - "[[YYYY-MM-DD Source title]]"
 ---
 ```
 
+- Lists in the frontmatter use one item per line (`  - item`, two-space indent), the format Obsidian's Properties panel writes, so opening a page in Obsidian produces no diff. An empty list stays `[]`. Wikilinks in lists go in double quotes. No duplicate items (the linter flags them).
 - Internal links use wikilinks: `[[Page Name]]`.
 - Filename = page title.
 - Images referenced via `raw/assets/`.

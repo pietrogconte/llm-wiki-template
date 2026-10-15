@@ -41,12 +41,12 @@ Como uma LLM Wiki funciona: as camadas, as operações que o agente executa, as 
 
 | Tipo | Quem faz | Exemplos |
 |---|---|---|
-| Mecânico | `scripts/lint_wiki.py` (hook opcional + CI) | links quebrados, `.md` vazio, página fora do index, frontmatter, link sem extensão, exemplo `[[link]]` fora de crases, fonte sem ingest |
+| Mecânico | `scripts/lint_wiki.py` (hook opcional + CI) | links quebrados, `.md` vazio, página fora do index, frontmatter, link sem extensão, exemplo `[[link]]` fora de crases, item repetido em lista do frontmatter, fonte sem ingest |
 | Semântico | o agente, quando você pede | contradições entre páginas, afirmações superadas por fontes novas, páginas órfãs, conceitos sem página, referências cruzadas faltando |
 
 ## Schema e convenções
 
-- **Frontmatter YAML** em toda página da wiki: `title`, `tags`, `date` (AAAA-MM-DD), `status` (`active`/`stale`/`archived`), `sources`.
+- **Frontmatter YAML** em toda página da wiki: `title`, `tags`, `date` (AAAA-MM-DD), `status` (`active`/`stale`/`archived`), `sources`. Listas com um item por linha, como o Obsidian grava (lista vazia: `[]`).
 - **Wikilinks** no formato `[[Página]]`, com nome de arquivo igual ao título. Compatível com o Obsidian.
 - **`index.md`** é o catálogo: toda página precisa estar lá. É por onde o agente (e você) começa.
 - **`log.md`** é append-only: cada ingest, query, lint e setup vira uma entrada datada.

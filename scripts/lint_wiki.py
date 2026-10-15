@@ -11,6 +11,7 @@ Errors (exit code 1):
   E5  relative markdown link to a file without extension (Obsidian would
       create an empty "<name>.md" when clicked) or to a missing .md file
   E6  [[wikilink]] example outside backticks in a doc (README, CLAUDE, ...)
+  E7  duplicate item in a frontmatter list (tags, sources, ...)
 
 Warnings (exit code 0, or 1 with --strict):
   W1  file in raw/ not mentioned in wiki/log.md or wiki/sources/ (no ingest?)
@@ -38,6 +39,7 @@ CHECKS = {
     "E4": "missing or incomplete frontmatter",
     "E5": "bad relative markdown link",
     "E6": "wikilink example outside backticks in a doc",
+    "E7": "duplicate item in a frontmatter list",
     "W1": "raw source with no ingest in log/sources",
 }
 
@@ -46,6 +48,7 @@ MDLINK_RE = re.compile(r"\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
 INLINE_CODE_RE = re.compile(r"(`+)(.+?)\1")
 FENCE_RE = re.compile(r"^\s{0,3}(`{3,}|~{3,})")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+WIKILINK_ONLY_RE = re.compile(r"^\[\[[^\[\]]*\]\]$")
 
 
 def norm(text):
@@ -96,18 +99,67 @@ def wikilink_target(inner):
     return target
 
 
+def unquote_item(item):
+    item = item.strip()
+    if len(item) >= 2 and item[0] == item[-1] and item[0] in "\"'":
+        item = item[1:-1]
+    return item
+
+
+def split_flow_list(inner):
+    """Split the inside of a flow list "[a, "b, c", [[d]]]" on top-level commas."""
+    items, buf, quote, depth = [], "", None, 0
+    for ch in inner:
+        if quote:
+            buf += ch
+            if ch == quote:
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+            buf += ch
+        elif ch == "[":
+            depth += 1
+            buf += ch
+        elif ch == "]":
+            depth -= 1
+            buf += ch
+        elif ch == "," and depth == 0:
+            items.append(buf)
+            buf = ""
+        else:
+            buf += ch
+    items.append(buf)
+    return [unquote_item(i) for i in items if i.strip()]
+
+
 def parse_frontmatter(text):
-    """Return a dict of top-level keys, or None if there is no frontmatter."""
+    """Return (keys, lists), or None if there is no frontmatter.
+
+    keys maps each top-level key to its raw scalar value; lists maps the keys
+    whose value is a list (flow "[a, b]", empty "[]" or block "- item" lines)
+    to a list of (line number, item).
+    """
     lines = text.splitlines()
     if not lines or lines[0].strip() != "---":
         return None
-    keys = {}
-    for line in lines[1:]:
+    keys, lists = {}, {}
+    current = None
+    for lineno, line in enumerate(lines[1:], 2):
         if line.strip() == "---":
-            return keys
+            return keys, lists
         m = re.match(r"^([A-Za-z0-9_-]+):\s*(.*)$", line)
         if m:
-            keys[m.group(1)] = m.group(2).strip().strip("\"'")
+            key, value = m.group(1), m.group(2).strip()
+            keys[key] = value.strip("\"'")
+            current = None
+            if value.startswith("[") and value.endswith("]") and not WIKILINK_ONLY_RE.match(value):
+                lists[key] = [(lineno, i) for i in split_flow_list(value[1:-1])]
+            elif not value:
+                current = key
+            continue
+        item = re.match(r"^\s*-\s+(.*)$", line)
+        if item and current:
+            lists.setdefault(current, []).append((lineno, unquote_item(item.group(1))))
     return None  # unterminated block
 
 
@@ -186,10 +238,17 @@ class Linter:
             self.add("E5", path, lineno, "(%s) points to a missing file" % target)
 
     def check_frontmatter(self, path, text):
-        fm = parse_frontmatter(text)
-        if fm is None:
+        parsed = parse_frontmatter(text)
+        if parsed is None:
             self.add("E4", path, 1, "no YAML frontmatter (--- block at the top)")
             return
+        fm, lists = parsed
+        for key, items in lists.items():
+            seen = set()
+            for lineno, item in items:
+                if norm(item) in seen:
+                    self.add("E7", path, lineno, "'%s' repeated in %s" % (item, key))
+                seen.add(norm(item))
         missing = [k for k in REQUIRED_KEYS if k not in fm]
         if missing:
             self.add("E4", path, 1, "missing keys: %s" % ", ".join(missing))

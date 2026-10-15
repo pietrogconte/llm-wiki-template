@@ -97,6 +97,7 @@ python scripts/lint_wiki.py --root ../another-wiki
 | E4 | missing or incomplete frontmatter (`title`, `tags`, `date`, `status`, `sources`) |
 | E5 | relative markdown link to a file without extension (Obsidian would create an empty `.md`) or to a missing `.md` |
 | E6 | `[[link]]` example outside backticks in docs (README, CLAUDE, etc.) |
+| E7 | duplicate item in a frontmatter list (`tags`, `sources`, etc.), flow or block |
 | W1 | warning: file in `raw/` not mentioned in `log.md` or `wiki/sources/` (ingest pending?) |
 
 The **semantic** checks (contradictions, stale claims, missing cross-references) remain the agent's **Lint** operation, described in `CLAUDE.md`.
