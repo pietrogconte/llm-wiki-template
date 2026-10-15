@@ -97,6 +97,7 @@ python scripts/lint_wiki.py --root ../outra-wiki
 | E4 | frontmatter ausente ou incompleto (`title`, `tags`, `date`, `status`, `sources`) |
 | E5 | link markdown relativo para arquivo sem extensão (o Obsidian criaria um `.md` vazio) ou para `.md` inexistente |
 | E6 | exemplo `[[link]]` fora de crases em documentos (README, CLAUDE, etc.) |
+| E7 | item repetido numa lista do frontmatter (`tags`, `sources`, etc.), em linha ou em bloco |
 | W1 | aviso: arquivo em `raw/` sem menção no `log.md` nem em `wiki/sources/` (ingest pendente?) |
 
 As checagens **semânticas** (contradições, afirmações desatualizadas, referências cruzadas faltando) continuam sendo a operação **Lint** do agente, descrita no `CLAUDE.md`.
