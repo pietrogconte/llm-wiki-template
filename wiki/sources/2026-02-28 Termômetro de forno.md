@@ -1,6 +1,9 @@
 ---
 title: 2026-02-28 Termômetro de forno
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-02-28
 status: active
 sources: []

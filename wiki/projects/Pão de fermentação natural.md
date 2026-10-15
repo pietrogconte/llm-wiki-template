@@ -1,6 +1,9 @@
 ---
 title: Pão de fermentação natural
-tags: [projeto, pao, exemplo]
+tags:
+  - projeto
+  - pao
+  - exemplo
 date: 2026-02-07
 status: active
 sources:

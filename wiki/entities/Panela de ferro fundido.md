@@ -1,6 +1,9 @@
 ---
 title: Panela de ferro fundido
-tags: [entidade, ferramenta, exemplo]
+tags:
+  - entidade
+  - ferramenta
+  - exemplo
 date: 2026-01-24
 status: active
 sources:

@@ -1,6 +1,9 @@
 ---
 title: 2026-02-14 Primeira pizza napolitana
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-02-14
 status: active
 sources: []

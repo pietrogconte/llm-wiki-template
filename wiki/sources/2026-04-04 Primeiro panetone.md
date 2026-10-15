@@ -1,6 +1,9 @@
 ---
 title: 2026-04-04 Primeiro panetone
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-04-04
 status: active
 sources: []

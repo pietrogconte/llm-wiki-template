@@ -1,6 +1,9 @@
 ---
 title: Fermentação natural
-tags: [conceito, fermentacao, exemplo]
+tags:
+  - conceito
+  - fermentacao
+  - exemplo
 date: 2026-04-04
 status: active
 sources:

@@ -1,6 +1,9 @@
 ---
 title: 2026-01-10 Diário de alimentação do levain
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-01-10
 status: active
 sources: []

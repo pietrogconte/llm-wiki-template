@@ -1,6 +1,9 @@
 ---
 title: 2026-01-24 Teste de hidratação 70 vs 75
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-01-24
 status: active
 sources: []

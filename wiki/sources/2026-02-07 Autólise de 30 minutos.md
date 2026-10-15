@@ -1,6 +1,9 @@
 ---
 title: 2026-02-07 Autólise de 30 minutos
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-02-07
 status: active
 sources: []

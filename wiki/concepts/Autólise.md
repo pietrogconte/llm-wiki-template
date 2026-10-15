@@ -1,6 +1,9 @@
 ---
 title: Autólise
-tags: [conceito, tecnica, exemplo]
+tags:
+  - conceito
+  - tecnica
+  - exemplo
 date: 2026-03-07
 status: active
 sources:

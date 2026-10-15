@@ -1,6 +1,9 @@
 ---
 title: Panetone
-tags: [projeto, panetone, exemplo]
+tags:
+  - projeto
+  - panetone
+  - exemplo
 date: 2026-04-18
 status: active
 sources:

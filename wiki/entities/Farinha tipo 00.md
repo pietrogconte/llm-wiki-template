@@ -1,6 +1,9 @@
 ---
 title: Farinha tipo 00
-tags: [entidade, ingrediente, exemplo]
+tags:
+  - entidade
+  - ingrediente
+  - exemplo
 date: 2026-02-21
 status: active
 sources:

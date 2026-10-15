@@ -1,6 +1,9 @@
 ---
 title: Força da farinha
-tags: [conceito, farinha, exemplo]
+tags:
+  - conceito
+  - farinha
+  - exemplo
 date: 2026-04-04
 status: active
 sources:

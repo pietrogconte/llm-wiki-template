@@ -1,6 +1,9 @@
 ---
 title: 2026-04-18 Douradura da casca
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-04-18
 status: active
 sources: []

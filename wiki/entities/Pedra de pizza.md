@@ -1,6 +1,9 @@
 ---
 title: Pedra de pizza
-tags: [entidade, ferramenta, exemplo]
+tags:
+  - entidade
+  - ferramenta
+  - exemplo
 date: 2026-02-14
 status: active
 sources:

@@ -1,6 +1,9 @@
 ---
 title: Hidratação
-tags: [conceito, massa, exemplo]
+tags:
+  - conceito
+  - massa
+  - exemplo
 date: 2026-03-07
 status: active
 sources:

@@ -1,6 +1,9 @@
 ---
 title: 2026-03-14 Fermentação a frio
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-03-14
 status: active
 sources: []

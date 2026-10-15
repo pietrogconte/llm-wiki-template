@@ -1,6 +1,9 @@
 ---
 title: Forno doméstico
-tags: [entidade, ferramenta, exemplo]
+tags:
+  - entidade
+  - ferramenta
+  - exemplo
 date: 2026-02-28
 status: active
 sources:

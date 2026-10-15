@@ -1,6 +1,9 @@
 ---
 title: 2026-03-07 Focaccia de alta hidratação
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-03-07
 status: active
 sources: []

@@ -1,6 +1,9 @@
 ---
 title: Reação de Maillard
-tags: [conceito, forno, exemplo]
+tags:
+  - conceito
+  - forno
+  - exemplo
 date: 2026-04-18
 status: active
 sources:

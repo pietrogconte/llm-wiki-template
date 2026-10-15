@@ -1,6 +1,9 @@
 ---
 title: 2026-02-21 Farinha 00 e valor W
-tags: [fonte, nota, exemplo]
+tags:
+  - fonte
+  - nota
+  - exemplo
 date: 2026-02-21
 status: active
 sources: []
