@@ -2,6 +2,11 @@
 
 All notable changes to this template are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-10-15
+
+### Changed
+- GitHub Actions workflow: `actions/checkout` v4 → v7 and `actions/setup-python` v5 → v7, both running on Node.js 24. GitHub has deprecated Node.js 20 on Actions runners and was forcing the old versions onto Node.js 24 with a warning. No change to what the workflow does (linter on push and pull request, Python 3.9 and 3.12).
+
 ## [1.0.1] - 2026-10-15
 
 ### Added
