@@ -1,6 +1,9 @@
 ---
 title: 2026-03-14 Cold fermentation
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-03-14
 status: active
 sources: []

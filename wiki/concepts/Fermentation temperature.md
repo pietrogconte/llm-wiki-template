@@ -1,6 +1,9 @@
 ---
 title: Fermentation temperature
-tags: [concept, fermentation, example]
+tags:
+  - concept
+  - fermentation
+  - example
 date: 2026-04-04
 status: active
 sources:

@@ -1,6 +1,9 @@
 ---
 title: 2026-01-24 Hydration test 70 vs 75
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-01-24
 status: active
 sources: []

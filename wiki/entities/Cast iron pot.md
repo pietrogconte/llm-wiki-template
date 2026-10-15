@@ -1,6 +1,9 @@
 ---
 title: Cast iron pot
-tags: [entity, tool, example]
+tags:
+  - entity
+  - tool
+  - example
 date: 2026-01-24
 status: active
 sources:

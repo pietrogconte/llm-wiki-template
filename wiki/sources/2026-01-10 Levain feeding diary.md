@@ -1,6 +1,9 @@
 ---
 title: 2026-01-10 Levain feeding diary
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-01-10
 status: active
 sources: []

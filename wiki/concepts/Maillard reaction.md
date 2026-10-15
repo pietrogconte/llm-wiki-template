@@ -1,6 +1,9 @@
 ---
 title: Maillard reaction
-tags: [concept, oven, example]
+tags:
+  - concept
+  - oven
+  - example
 date: 2026-04-18
 status: active
 sources:

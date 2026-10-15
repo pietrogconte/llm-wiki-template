@@ -1,6 +1,9 @@
 ---
 title: Panettone
-tags: [project, panettone, example]
+tags:
+  - project
+  - panettone
+  - example
 date: 2026-04-18
 status: active
 sources:

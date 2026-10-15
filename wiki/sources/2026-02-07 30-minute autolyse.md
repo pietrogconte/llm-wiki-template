@@ -1,6 +1,9 @@
 ---
 title: 2026-02-07 30-minute autolyse
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-02-07
 status: active
 sources: []

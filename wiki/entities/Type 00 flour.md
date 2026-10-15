@@ -1,6 +1,9 @@
 ---
 title: Type 00 flour
-tags: [entity, ingredient, example]
+tags:
+  - entity
+  - ingredient
+  - example
 date: 2026-02-21
 status: active
 sources:

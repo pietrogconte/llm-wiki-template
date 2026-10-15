@@ -1,6 +1,9 @@
 ---
 title: Neapolitan pizza
-tags: [project, pizza, example]
+tags:
+  - project
+  - pizza
+  - example
 date: 2026-02-28
 status: active
 sources:

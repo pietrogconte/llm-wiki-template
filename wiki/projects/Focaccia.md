@@ -1,6 +1,9 @@
 ---
 title: Focaccia
-tags: [project, focaccia, example]
+tags:
+  - project
+  - focaccia
+  - example
 date: 2026-03-14
 status: active
 sources:

@@ -1,6 +1,9 @@
 ---
 title: 2026-02-28 Oven thermometer
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-02-28
 status: active
 sources: []

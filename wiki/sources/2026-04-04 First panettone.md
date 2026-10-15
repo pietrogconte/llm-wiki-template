@@ -1,6 +1,9 @@
 ---
 title: 2026-04-04 First panettone
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-04-04
 status: active
 sources: []

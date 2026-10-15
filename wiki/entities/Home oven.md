@@ -1,6 +1,9 @@
 ---
 title: Home oven
-tags: [entity, tool, example]
+tags:
+  - entity
+  - tool
+  - example
 date: 2026-02-28
 status: active
 sources:

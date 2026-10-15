@@ -1,6 +1,9 @@
 ---
 title: 2026-04-18 Crust browning
-tags: [source, note, example]
+tags:
+  - source
+  - note
+  - example
 date: 2026-04-18
 status: active
 sources: []

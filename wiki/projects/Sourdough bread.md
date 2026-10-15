@@ -1,6 +1,9 @@
 ---
 title: Sourdough bread
-tags: [project, bread, example]
+tags:
+  - project
+  - bread
+  - example
 date: 2026-02-07
 status: active
 sources:

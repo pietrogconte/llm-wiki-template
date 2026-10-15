@@ -1,6 +1,9 @@
 ---
 title: Hydration
-tags: [concept, dough, example]
+tags:
+  - concept
+  - dough
+  - example
 date: 2026-03-07
 status: active
 sources:

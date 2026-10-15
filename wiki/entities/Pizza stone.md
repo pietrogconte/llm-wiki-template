@@ -1,6 +1,9 @@
 ---
 title: Pizza stone
-tags: [entity, tool, example]
+tags:
+  - entity
+  - tool
+  - example
 date: 2026-02-14
 status: active
 sources:
