@@ -2,6 +2,15 @@
 
 All notable changes to this template are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-10-15
+
+### Added
+- Linter check **E7**: duplicate item in a frontmatter list (`tags`, `sources`, any list key), in flow (`[a, b]`) or block (`- item`) format, case-insensitive. Reported on the line of the repeated item.
+
+### Changed
+- Schema (`CLAUDE.md`/`AGENTS.md`): frontmatter lists use one item per line with a two-space indent, the format Obsidian's Properties panel writes, so opening a page in Obsidian no longer produces a diff. Empty lists stay `[]`; wikilinks in lists are double-quoted.
+- `example` and `example-en` branches: frontmatter converted to the new list format.
+
 ## [1.0.0] - 2026-10-14
 
 First "ready to use" release.
